@@ -1,0 +1,38 @@
+body {
+    font-size: 0.8rem;
+}
+.table-refresh__button {
+    background: #eeeeee;
+    color: #333333;
+    border: none;
+    outline: none;
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.table-refresh__button > i {
+    font-size: 1.2em;
+}
+
+.table-refresh__button--refreshing {
+    animation: 0.5s rotate infinite linear;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.red-text {
+    color: red;
+    font-weight: bold;
+}
+
+.container {
+    width: 80%;
+}
