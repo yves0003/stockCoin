@@ -14,7 +14,7 @@
                 <tr>
                     ${row.map((col,index) => {
                         if (index==0) {
-                            return `<td><a href="https://trade.kraken.com/fr-fr/charts/KRAKEN:${col.replace("EUR","").replace("*","")}-EUR?period=15m" target="_blank">${col}</a></td>`;
+                            return `<td><a href="https://trade.kraken.com/fr-fr/charts/KRAKEN:${col.replace("ZEUR","").replace("EUR","").replace("*","")}-EUR?period=15m" target="_blank">${col}</a></td>`;
                         } else {
                             if (!isNaN(col.replace(" ","").replace(",",".").replace("%",""))) {
                                 if (parseFloat(col.replace(" ","").replace(",",".").replace("%",""))>=0) {
