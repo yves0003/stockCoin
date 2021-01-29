@@ -18,12 +18,12 @@
                         } else {
                             if (!isNaN(col.replace(" ","").replace(",",".").replace("%",""))) {
                                 if (parseFloat(col.replace(" ","").replace(",",".").replace("%",""))>=0) {
-                                    return `<td class="green-text">${col}</td>`;
+                                    return `<td class="green-text">${col.replace(" ","")}</td>`;
                                 }else {
-                                    return `<td class="red-text">${col}</td>`;
+                                    return `<td class="red-text">${col.replace(" ","")}</td>`;
                                 }
                             } else {
-                                return `<td>${col}</td>`;
+                                return `<td>${col.replace(" ","")}</td>`;
                             }
                         }
                     }).join("")}
