@@ -27,11 +27,11 @@
                         <a class="nav-link active" aria-current="" href="./index.html">Stocks</a>
                         <a class="nav-link" href="./crypto.html">Crypto</a>
                         <input class="form-control" type="text" id="perte" placeholder="% perte"
-                            style="background-color: #d9adad; margin-left: 8px;" value="5%">
+                            style="background-color: #d9adad; margin-left: 8px;" value="5%" oninput="updateMontant()">
                         <input class="form-control" type="text" id="gain" placeholder="% gain"
-                            style="background-color: #c6ebc9; margin-left: 8px;" value="10%">
+                            style="background-color: #c6ebc9; margin-left: 8px;" value="10%" oninput="updateMontant()">
                         <input class="form-control" type="text" id="montant" placeholder="montant"
-                            style="margin-left: 8px;" oninput="updateMontant(this)">
+                            style="margin-left: 8px;" oninput="updateMontant()">
                         <input class="form-control" type="text" disabled id="stoploss" placeholder="stop loss"
                             style="background-color: #d9adad; margin-left: 8px;">
                         <input class="form-control" type="text" disabled id="takeprofit" placeholder="take profit"

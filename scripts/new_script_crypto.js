@@ -94,8 +94,8 @@
         updateTable(root);
     }
 
-    function updateMontant(e){
-        let value = parseFloat(e.value.replace(",","."));
+    function updateMontant(){
+        let value = parseFloat(document.getElementById('montant').value);
         let gainPercent = parseFloat(document.getElementById('gain').value.replace("%",""));
         let perteValue = parseFloat(document.getElementById('perte').value.replace("%",""));
         let stoploss = document.getElementById('stoploss');
