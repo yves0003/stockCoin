@@ -14,7 +14,7 @@
                 <tr>
                     ${row.map((col,index) => {
                         if (index==0) {
-                            return `<td><a href="https://trade.kraken.com/fr-fr/charts/KRAKEN:${col.replace("EUR","")}-EUR?period=15m" target="_blank">${col}</a></td>`;
+                            return `<td><a href="https://trade.kraken.com/fr-fr/charts/KRAKEN:${col.correct_text()}-EUR?period=15m" target="_blank">${col}</a></td>`;
                         } else {
                             if (!isNaN(col.replace(" ","").replace(",",".").replace("%",""))) {
                                 if (parseFloat(col.replace(" ","").replace(",",".").replace("%",""))>=0) {
@@ -62,6 +62,9 @@
 
 
         const options = document.createElement('div');
+        options.setAttribute("style","display:flex");
+        options.setAttribute("style","justify-content:space-between");
+
         table.classList.add("table-refresh__table");
         //
         table.setAttribute('data-toggle',"table");
@@ -78,10 +81,12 @@
             </tbody>
         `;
         options.innerHTML = `
-            <span class="table-refresh__label">Last Update: never</span>
-            <button type="button" class="table-refresh__button">
+            <div style="float: left">* - definit le nombre de leviers</div>
+            <button type="button" class="table-refresh__button" style="float: right">
                 <i class="material-icons">refresh</i>
             </button>
+            <span class="table-refresh__label" style="float: right">Last Update: never</span>
+            
         `
 
         root.append(table, options); 
@@ -109,5 +114,14 @@
             stoploss.value = "";
             takeprofit.value = "";
         }
+    }
+
+    String.prototype.correct_text = function () {
+        return this.valueOf()
+                .replace("ZEUR","")
+                .replace("EUR","")
+                .replace("*","")
+                .replace(/^X/,"")
+                .replace(/\*/g,"")
     }
 }
